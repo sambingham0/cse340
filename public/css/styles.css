@@ -4,3 +4,161 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  padding: 20px;
+  align-items: center;
+}
+
+.siteName {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.siteName a {
+  color: #333;
+  text-decoration: none;
+}
+
+#tools a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: deepskyblue
+}
+
+/* body */
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#hero {
+  background-image: url('../../images/vehicles/delorean.jpg');
+  background-size: cover;       /* scale to cover the whole element */
+  background-repeat: no-repeat; /* no tiling */
+  background-position: center;  /* center the image */
+  min-height: 300px;
+  max-width: 98%;
+  margin-bottom: 50px;
+}
+
+#hero-label {
+  color: lightskyblue;
+  background-color: rgba(211, 211, 211, 0.5); /* semi-transparent black background */
+  padding: 20px;
+  max-width: 250px;
+}
+
+#hero-btn {
+  color: #333;
+  background-color: lightskyblue;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#reviews {
+  color: #333;
+  margin-bottom: 50px;
+}
+
+#reviews h2 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+#reviews li {
+  margin-bottom: 10px;
+}
+
+#upgrades {
+  align-items: center;
+  padding: 10px;
+}
+
+#upgrade-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+} 
+
+#upgrade-title {
+  margin-left: 15px;
+}
+
+.upgrade {
+  background-color: lightskyblue;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.upgrade img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.upgrade p {
+  font-size: 1.25rem;
+  margin-top: 5px;
+  color: #333;
+}
+
+.upgrade a {
+  text-decoration: none;
+}
+
+.upgrade a:hover {
+  color: deepskyblue;
+}
+
+
+/* footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
