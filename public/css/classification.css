@@ -1,0 +1,51 @@
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+}
+
+#inv-display li {
+  background-color: lightskyblue;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#inv-display li a img {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#inv-display .namePrice hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 10px 0;
+}
+
+#inv-display .namePrice h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+#inv-display .namePrice h2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+#inv-display .namePrice h2 a:hover {
+  color: deepskyblue;
+}
+
+#inv-display .namePrice span {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
