@@ -1,0 +1,12 @@
+<%# Content header %>
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<%- message %>
+
+<h2>Uh Oh!</h2>
+<p>Turn Around! Nothing Interesting Here!</p>
+<p>You can go back to the <a href="/">home page</a>,</p>
+<p>or you can go back to the <a href="javascript:history.back()">previous page</a>.</p>

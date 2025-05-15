@@ -65,7 +65,7 @@ body {
 }
 
 #hero {
-  background-image: url('../../images/vehicles/delorean.jpg');
+  background-image: url('../../images/vehicles/vehicles/delorean.jpg');
   background-size: cover;       /* scale to cover the whole element */
   background-repeat: no-repeat; /* no tiling */
   background-position: center;  /* center the image */
