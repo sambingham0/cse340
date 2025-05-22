@@ -89,31 +89,30 @@ body {
   padding: 10px;
 }
 
-#reviews {
-  color: #333;
+/* Add styles for the new wrapper */
+#upgrades-reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 50px;
 }
 
-#reviews h2 {
-  margin-left: 20px;
-  font-weight: bold;
-}
-
-#reviews li {
-  margin-bottom: 10px;
-}
-
-#upgrades {
-  align-items: center;
-  padding: 10px;
+/* Make reviews and upgrades responsive inside the wrapper */
+#reviews {
+  flex: 1 1 300px;
+  min-width: 250px;
+  margin-bottom: 0; /* Remove bottom margin to avoid extra space in flex */
 }
 
 #upgrade-cards {
+  flex: 2 1 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 20px;
-  align-items: center;
+  align-items: stretch;
 } 
 
 #upgrade-title {
@@ -125,7 +124,8 @@ body {
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  max-height: 150px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -150,7 +150,6 @@ body {
 .upgrade a:hover {
   color: deepskyblue;
 }
-
 
 /* footer */
 footer {
