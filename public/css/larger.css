@@ -37,4 +37,17 @@
         padding: 15px;
         font-weight: bold;
     }
+
+    .vehicle-detail-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .vehicle-detail-image, .vehicle-detail-info {
+        flex: 1;
+        max-width: 50%;
+    }
+    .vehicle-detail-image {
+        margin-right: 2rem;
+    }
 }
