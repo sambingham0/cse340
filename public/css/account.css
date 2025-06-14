@@ -1,0 +1,175 @@
+/* Login Form Styles */
+#login-form {
+  max-width: 400px;
+  margin: 2rem auto 1rem auto;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#login-form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+#login-form input:focus {
+  border-color: #0074d9;
+  outline: none;
+}
+
+#login-form button[type="submit"] {
+  background: deepskyblue;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#login-form button[type="submit"]:hover {
+  background: #0074d9;
+}
+
+.account-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.account-link a {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+.account-link a:hover {
+  color: #0074d9;
+}
+
+p {
+    text-align: center;
+}
+
+/* Registration & Login Form Styles */
+#registration-form, #login-form {
+  max-width: 400px;
+  margin: 2rem auto 1rem auto;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#registration-form label,
+#login-form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+
+#registration-form input[type="text"],
+#registration-form input[type="email"],
+#registration-form input[type="password"],
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+#registration-form input:focus,
+#login-form input:focus {
+  border-color: #0074d9;
+  outline: none;
+}
+
+#registration-form button[type="submit"],
+#login-form button[type="submit"] {
+  background: deepskyblue;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#registration-form button[type="submit"]:hover,
+#login-form button[type="submit"]:hover {
+  background: #0074d9;
+}
+
+#registration-form small {
+  color: #555;
+  font-size: 0.95em;
+  margin-top: -0.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+#registration-form p {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+#registration-form .toggle-password {
+  margin-left: 0.5rem;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#registration-form .toggle-password:hover {
+  background: #d0eaff;
+}
+
+#registration-form > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-link, #registration-form + p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.account-link a, #registration-form + p a {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+.account-link a:hover, #registration-form + p a:hover {
+  color: #0074d9;
+}

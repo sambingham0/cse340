@@ -58,6 +58,11 @@ nav a:hover {
   background-color: deepskyblue
 }
 
+.notice {
+  color: red;
+  font-weight: bold;
+}
+
 /* body */
 body {
   height: 100%;
