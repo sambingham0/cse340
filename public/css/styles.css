@@ -156,6 +156,91 @@ body {
   color: deepskyblue;
 }
 
+/* Delete Confirmation Styles */
+#deleteForm {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  background: #fff8f6;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.08);
+}
+#deleteForm label {
+  display: block;
+  margin-top: 1.2em;
+  font-weight: bold;
+  color: #c0392b;
+}
+#deleteForm input[readonly] {
+  background: #fbeee6;
+  color: #333;
+  border: 1px solid #e0b4a4;
+}
+#deleteForm p {
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 1.5em;
+}
+#deleteForm button[type="submit"] {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.75em 2em;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 2em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#deleteForm button[type="submit"]:hover {
+  background: #c0392b;
+}
+
+/* Account and Password Update Forms */
+.account-update-form,
+.password-update-form {
+  max-width: 400px;
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fafafa;
+}
+.account-update-form label,
+.password-update-form label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  font-weight: bold;
+}
+.account-update-form input[type="text"],
+.account-update-form input[type="email"],
+.password-update-form input[type="password"] {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.account-update-form button,
+.password-update-form button {
+  margin-top: 1em;
+  padding: 0.5em 1.5em;
+  background: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.account-update-form button:hover,
+.password-update-form button:hover {
+  background: #005fa3;
+}
+
 /* footer */
 footer {
   background-color: #333;

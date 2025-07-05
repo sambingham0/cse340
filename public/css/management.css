@@ -72,3 +72,23 @@ form small {
   border-radius: 4px;
   margin: 10px 0;
 }
+
+.classification-selector {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px 0 25px 0;
+  background: #f8f9fa;
+  transition: border-color 0.2s;
+}
+
+.classification-selector:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#classificationList {
+  margin-bottom: 20px;
+}

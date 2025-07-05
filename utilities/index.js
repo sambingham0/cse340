@@ -1,4 +1,5 @@
 const invModel = require("../models/inventory-model")
+const jwt = require("jsonwebtoken")
 const Util = {}
 
 /* ************************
@@ -63,7 +64,7 @@ Util.buildClassificationGrid = async function(data){
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList =
-    '<select name="classification_id" id="classificationList" required>'
+    '<select name="classification_id" id="classificationList" class="classification-selector" required>'
   classificationList += "<option value=''>Choose a Classification</option>"
   data.rows.forEach((row) => {
     classificationList += '<option value="' + row.classification_id + '"'
@@ -109,5 +110,56 @@ Util.buildDetailView = async function(vehicle) {
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+/* ****************************************
+ *  JWT Authentication Middleware
+ * ************************************ */
+Util.checkJWT = (req, res, next) => {
+  const token = req.cookies ? req.cookies.jwt : null
+  if (!token) {
+    res.locals.loggedin = false
+    return next()
+  }
+  try {
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
+    res.locals.loggedin = true
+    res.locals.accountData = decoded
+    return next()
+  } catch (err) {
+    res.locals.loggedin = false
+    return next()
+  }
+}
+
+/* ****************************************
+ *  Check Login
+ * ************************************ */
+ Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    next()
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
+
+ /**
+ * Middleware to restrict access to inventory admin routes to Employee or Admin only
+ */
+Util.inventoryAdminOnly = (req, res, next) => {
+  if (res.locals.loggedin && res.locals.accountData &&
+      (res.locals.accountData.account_type === 'Employee' || res.locals.accountData.account_type === 'Admin')) {
+    return next();
+  }
+  req.flash("notice", "You must be logged in as an Employee or Admin to access that page.");
+  let navPromise = Util.getNav();
+  navPromise.then(nav => {
+    res.status(403).render("account/login", {
+      title: "Login",
+      nav,
+      errors: null
+    });
+  });
+};
 
 module.exports = Util
