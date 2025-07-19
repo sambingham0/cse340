@@ -220,4 +220,15 @@ validate.checkUpdatePasswordData = async (req, res, next) => {
   next();
 };
 
+/**
+ * Middleware to require login
+ */
+validate.requireLogin = (req, res, next) => {
+  if (!res.locals.accountData) {
+    req.flash('error', 'Please log in to continue.');
+    return res.redirect('/account/login');
+  }
+  next();
+};
+
 module.exports = validate

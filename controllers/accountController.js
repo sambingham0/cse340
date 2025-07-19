@@ -151,12 +151,19 @@ async function accountLogin(req, res) {
 /* ****************************************
  *  Build account management view
  * ************************************ */
+const reviewModel = require("../models/review-model")
 async function buildAccountManagement(req, res, next) {
   let nav = await utilities.getNav()
+  const account_id = res.locals.accountData ? res.locals.accountData.account_id : null
+  let userReviews = []
+  if (account_id) {
+    userReviews = await reviewModel.getReviewsByAccount(account_id)
+  }
   res.render("account/account-management", {
     title: "Account Management",
     nav,
     errors: null,
+    userReviews
   })
 }
 

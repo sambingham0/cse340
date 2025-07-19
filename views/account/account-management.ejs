@@ -16,3 +16,19 @@
   <% } %>
 <% } %>
 <p>You're logged in.</p>
+
+<section class="user-reviews-section">
+  <h2>Your Reviews</h2>
+  <% if (userReviews && userReviews.length > 0) { %>
+    <ul class="user-reviews-list">
+      <% userReviews.forEach(function(review) { %>
+        <li>
+          <div class="review-date"><%= new Date(review.review_date).toLocaleDateString() %></div>
+          <div class="review-text"><%= review.review_text %></div>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>You have not written any reviews yet.</p>
+  <% } %>
+</section>

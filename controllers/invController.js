@@ -19,15 +19,25 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
+const reviewModel = require("../models/review-model")
 invCont.buildDetailView = async function (req, res, next) {
   const inv_id = req.params.invId
   const vehicle = await invModel.getVehicleById(inv_id)
   let nav = await utilities.getNav()
   const detail = await utilities.buildDetailView(vehicle)
+  // Fetch reviews for this inventory item
+  const reviews = await reviewModel.getReviewsByInventory(inv_id)
+  // Pass login status and accountData
+  const loggedin = res.locals.loggedin
+  const accountData = res.locals.accountData
   res.render("./inventory/detail", {
     title: `${vehicle.inv_make} ${vehicle.inv_model}`,
     nav,
     detail,
+    reviews,
+    loggedin,
+    accountData,
+    inv_id
   })
 }
 
